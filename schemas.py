@@ -12,9 +12,9 @@ Model name is converted to lowercase for the collection name:
 """
 
 from pydantic import BaseModel, Field
-from typing import Optional
+from typing import Optional, List, Literal
 
-# Example schemas (replace with your own):
+# Example schemas (you can keep or remove if not needed)
 
 class User(BaseModel):
     """
@@ -38,11 +38,37 @@ class Product(BaseModel):
     category: str = Field(..., description="Product category")
     in_stock: bool = Field(True, description="Whether product is in stock")
 
-# Add your own schemas here:
-# --------------------------------------------------
+# EV Charging Station schema
 
-# Note: The Flames database viewer will automatically:
-# 1. Read these schemas from GET /schema endpoint
-# 2. Use them for document validation when creating/editing
-# 3. Handle all database operations (CRUD) directly
-# 4. You don't need to create any database endpoints!
+ConnectorType = Literal[
+    "CCS2",
+    "CHAdeMO",
+    "Type2",
+    "Type3",
+    "Tesla",
+    "GB/T",
+]
+
+class Station(BaseModel):
+    """
+    EV Charging Station
+    Collection name: "station"
+    """
+    name: str = Field(..., description="Station name")
+    network: Optional[str] = Field(None, description="Network/operator name")
+    latitude: float = Field(..., ge=-90, le=90)
+    longitude: float = Field(..., ge=-180, le=180)
+    address: Optional[str] = Field(None)
+    city: Optional[str] = Field(None)
+    state: Optional[str] = Field(None)
+    country: Optional[str] = Field("IN")
+    postal_code: Optional[str] = Field(None)
+    connectors: List[ConnectorType] = Field(default_factory=list, description="Supported connector standards")
+    power_kw: Optional[float] = Field(None, ge=0, description="Max charging power in kW")
+    price: Optional[str] = Field(None, description="Pricing info or note")
+    available: Optional[bool] = Field(True, description="Availability flag (if known)")
+    amenities: List[str] = Field(default_factory=list, description="Nearby amenities")
+    phone: Optional[str] = Field(None)
+    hours: Optional[str] = Field(None)
+
+# Add your own schemas here as needed.

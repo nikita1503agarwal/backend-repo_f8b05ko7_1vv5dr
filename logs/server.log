@@ -1,0 +1,25 @@
+INFO:     Will watch for changes in these directories: ['/home/workspace']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [152] using StatReload
+INFO:     Started server process [154]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     172.20.0.1:57548 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     172.20.0.1:50304 - "GET /api/stations HTTP/1.1" 200 OK
+INFO:     172.20.0.1:50304 - "GET /api/stations HTTP/1.1" 200 OK
+INFO:     172.20.0.1:50304 - "GET /api/stations HTTP/1.1" 200 OK
+INFO:     172.20.0.1:50304 - "GET /api/stations HTTP/1.1" 200 OK
+INFO:     172.20.0.1:50312 - "GET /api/stations HTTP/1.1" 200 OK
+INFO:     172.20.0.1:50312 - "GET /api/stations HTTP/1.1" 200 OK
+INFO:     172.20.0.1:50312 - "GET /api/stations HTTP/1.1" 200 OK
+INFO:     172.20.0.1:50312 - "GET /api/stations HTTP/1.1" 200 OK
+INFO:     172.20.0.1:47946 - "GET /api/stations?q=bhav HTTP/1.1" 200 OK
+INFO:     172.20.0.1:47946 - "GET /api/stations?q=bhavna HTTP/1.1" 200 OK
+INFO:     172.20.0.1:47946 - "GET /api/stations?q=bhavnagar HTTP/1.1" 200 OK
+INFO:     172.20.0.1:35248 - "GET /api/stations?q=bhavnaga HTTP/1.1" 200 OK
+INFO:     172.20.0.1:35248 - "GET /api/stations HTTP/1.1" 200 OK
+INFO:     172.20.0.1:35248 - "GET /api/stations?city=b HTTP/1.1" 200 OK
+INFO:     172.20.0.1:35264 - "GET /api/stations?city=bha HTTP/1.1" 200 OK
+INFO:     172.20.0.1:35248 - "GET /api/stations?city=bhav HTTP/1.1" 200 OK
+INFO:     172.20.0.1:35264 - "GET /api/stations?city=bhavna HTTP/1.1" 200 OK
+INFO:     172.20.0.1:35264 - "GET /api/stations?city=bhavnagar HTTP/1.1" 200 OK
